@@ -8,13 +8,15 @@
 
 <hr>
 
-<%= render '/movies/comments/form', 
-  comment: @comment, movie_id: @movie.id %>
 
 <hr>
 
-<%= render '/movies/comments/index', 
-  comments: @movie.comments.approveds %>
+<% @movie.comments.approveds.each do |comment| %>
+  <p>- <%= comment.body %></p>
+  <p>- Aprovado? <%= comment.approved.to_s %></p>
+<% end %>
+
+<hr>
 
 <div>
   <%= link_to "Edit this movie", edit_movie_path(@movie) %> |
