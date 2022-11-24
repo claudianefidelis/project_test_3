@@ -3,5 +3,5 @@ class Movie < ApplicationRecord
     has_many :comments
     accepts_nested_attributes_for :comments
 
-    validates :title, :year, presence: true
+    validates :year, presence: true
 end
